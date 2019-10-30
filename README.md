@@ -5,61 +5,25 @@ In this assignment, you will use HTML, CSS, and JavaScript on the Frontend to cr
 
 All the code and packages you need is in this GitHub Classroom repo. Do not install any other packages (unless given premission by the instructor)
 
-### REST API
-Your API will have a collection "Blog Posts", and a sub-collection "Comments".
+### REST API for Cards
+You will use the [Deck of Card API](http://deckofcardsapi.com/) as a was to create a Deck of Cards, take cards out of that deck, and manage the hands of the player and the dealer.
 
-You will need to implement the following URI routes:
+### Blackjack Game
+Blackjack is a simple card game between a dealer and a player. The goals is to get 21 points, without going over 21 (busting). A player wins if they:
+* get 21 points on the player's first two cards (called a "blackjack" or "natural"), without a dealer blackjack;
+* reach a final score higher than the dealer without exceeding 21
+* let the dealer draw additional cards until their hand exceeds 21 ("busted").
 
-* POST - /posts
-  * This should accept a JSON body and create a new blog post element in the post collection
-* GET - /posts
-  * Return a JSON listing of all posts in Database.
-* GET - /posts/[post_id]
-  * This should return in JSON the contents on this blog post. If no such blog post exists, it should return a 404. If any comments are in this post, it should return all of them as well.
-* PUT - /posts/[post_id]
-  * This should accept a JSON body and update the post identified by [post_id]. If this post does not exist, it should create it.
-* DELETE - /posts/[post_id]
-  * This should delete the post. Return 404 if no such post exists.
-* POST - /posts/[post_id]/comments
-  * This should accept a JSON body and create a new blog post comment element in the comments collection in the blog post identified by [post_id].
-* GET - /posts/[post_id]/comments
-  * Return a JSON listing of all comments from the post identified by [post_id].
-* GET - /posts/[post_id]/comments/[comment_id]
-  * This should return in JSON the contents on this comment. If no such comment exists, it should return a 404
-* PUT - /posts/[post_id]/comments/[comment_id]
-  * This should accept a JSON body and update the comment identified by [comment_id]. If this comment does not exist, it should create it.
-* DELETE - /posts/[post_id]/comments/[comment_id]
-  * This should delete the comment. Return 404 if no such comment exists.
+The game goes as followes:
+* Both the dealer and the player get two cards from the deck. The first card from the dealer is visible to the player, the second is not.
+* The player goes first, and is allowed to ask for another card (Hit), or end their turn (Stay). If the player goes over 21, the game is over and the dealer wins.
+* Next the dealer gets to go. They flip their hidden card and must get new cards until they have atleast 17 points. Then they stop once they reach or go beyond 17. If they go over 21, the player wins.
+* If nether the player nor dealer go over 21, then whoever has the most points wins. If they have the same points, the game is a tie.
 
-Also create search functionality for your API.
-* GET - /posts?search=[search_Query]
-  * Return a JSON listing of all posts that have [search_Query] in the Title or Body.
-* GET - /posts/[post_id]/comments?search=[search_Query]
-  * Return a JSON listing of all comments from the post identified by [post_id] that have [search_Query] in the Title or Body.
+Number cards are worth the number listed on the card. Face cards (King, Queen, Jack) are worth 10 points. And Aces are worth 11 or 1 points (use the value that ensures you do not go over 21).
 
-Schema for Blog Posts
-* Post ID
-  * ID for Blog post
-* Title
-  * Title of Blog post
-* Body
-  * Body of Blog post
-* Author
-  * Name of Author of Blog post
-* Date
-  * Date when Blog post was created
-
-Schema for Comments
-* Comment ID
-  * ID for Comment
-* Title
-  * Title of Comment
-* Body
-  * Body of Comment
-* Author
-  * Name of Author of Comment
-* Date
-  * Date when Comment was created
+### Frontend layout
+Your page should have a green (card table green) background. At the top will be the 
 
 ### Frontend Testing
 You will also need to test all the routes listed above, using similar AJAX requests you used in Project 1. You must test all routes for both success and failure (return the correct error code). A basic index.pug page with some buttons have been created for you in this project. The code in /public/javascripts/main.js will fire when pressing these buttons. Feel free to add new buttons to create more events, or test other behaviour. Write comments in main.js to describe your tests and what expected output is. 
