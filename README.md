@@ -1,9 +1,9 @@
-# CSE264 Project 2: Building a REST API with MongoDB
-## Due: Wednesday, October 23, 2019 at 11:59 PM
+# CSE264 Project 3: Making a Blackjack 21 Game using HTML/CSS/DOM
+## Due: Thursday, November 14, 2019 at 11:59 PM
 
-In this assignment, you will use Node.js, Express.js and MongoDB to create your own REST API for blog posts and the comments inside those blog posts. You will also write some frontend javascript code to test your REST API.
+In this assignment, you will use HTML, CSS, and JavaScript on the Frontend to create a playable blackjack 21 game.
 
-All the code and packages you need is in this GitHub Classroom repo. Do not install any other packages.
+All the code and packages you need is in this GitHub Classroom repo. Do not install any other packages (unless given premission by the instructor)
 
 ### REST API
 Your API will have a collection "Blog Posts", and a sub-collection "Comments".
