@@ -34,54 +34,24 @@ The flow of the game (events that need to take place) are as follows:
 * If both the player and dealer do not go over 21, then who ever has the highest number wins. If they have the same score, it is a tie. (Go to the game over modal)
 * The game over modal will display who won, and a button asking if the player wishes to play again. If this button is pressed. The cards, score, etc are cleared, the modal goes away. And the player can play the game again. 
 
+### Other considerations
+* You do not need to change any Node.js or Express code for this project. This is only a frontend project. Most of your code will be changes to the pug view file, and /public/javascripts/main.js file.
+* You should not need to reload the page once it loads for the first time. Everything should be done by using JavaScript to change and update the DOM.
+* You can use Semantic UI, or any other CSS library is you wish. You can update these in the layout.pug file in the views directory. 
+* Some features in Semantic UI will requier jQuery and SemanticUI.js. You can import these from cdnjs [https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js](https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js)
+* You should use regular JS to update and change the DOM, not jQuery. 
+* You can use any feature in Semantic UI (or similar CSS Library) that you would find usuful. 
+
 ### Install and Run
 You must have node.js running on your machine. Once you have cloned this project you can run `npm install` to install all the packages for this project. Then running `npm run dev` will run the dev version of this code, which will run this project with nodemon. Nodemon auto-restarts the node server every time you make a change to a file. Very helpful when you are writing and testing code.
 
-### .env and MongoDB
-You need to have a MongoDB server running before launching your API. You can
-download MongoDB [here](https://www.mongodb.com/download-center/community), or install it via a package manager.
-Windows users, read [Install MongoDB on Windows](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/).
 
-You can also use
-[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or [Compose](https://www.compose.io/) instead of downloading and installing MongoDB locally. 
-
-Which ever you do, you will need to cretae a .env from the .env.example 
-You can do this by `cp .env.example .env`
-
-The store your MongoDB URI connection in your  `.env` file.
-
-**Note:** Never ever store real credentials in `.env.example` or anywhere that is not `.env` as you may push these changes to your git repo.
-
-### Get Hosted MongoDB Atlas
-
-From [https://github.com/sahat/hackathon-starter#deployment](https://github.com/sahat/hackathon-starter#deployment)
-
-- Go to [https://www.mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
-- Click the green **Get started free** button
-- Fill in your information then hit **Get started free**
-- You will be redirected to Create New Cluster page.
-- Select a **Cloud Provider and Region** (such as AWS and a free tier region)
-- Select cluster Tier to **Free Shared Clusters**
-- Give Cluster a name (default: Cluster0)
-- Click on green **:zap:Create Cluster button**
-- Now, to access your database you need to create a DB user. To create a new MongoDB user, from the **Clusters view**, select the **Security tab**
-- Under the **MongoDB Users** tab, click on **+Add New User**
-- Fill in a username and password and give it either **Atlas Admin** User Privilege
-- Next, you will need to create an IP address whitelist and obtain the connection URI.  In the Clusters view, under the cluster details (i.e. SANDBOX - Cluster0), click on the **CONNECT** button.
-- Under section **(1) Check the IP Whitelist**, click on **ALLOW ACCESS FROM ANYWHERE**. The form will add a field with `0.0.0.0/0`.  Click **SAVE** to save the `0.0.0.0/0` whitelist.
-- Under section **(2) Choose a connection method**, click on **Connect Your Application**
-- In the new screen, select **Node.js** as Driver and version **2.2.12 or later**. _*WARNING*_: Do not pick 3.0 or later since connect-mongo can't handle mongodb+srv:// connection strings.
-- Finally, copy the URI connection string and replace the URI in MONGODB_URI of `.env.example` with this URI string.  Make sure to replace the <PASSWORD> with the db User password that you created under the Security tab.
-- Note that after some of the steps in the Atlas UI, you may see a banner stating `We are deploying your changes`.  You will need to wait for the deployment to finish before using the DB in your application.
-
-
-**Note:** As an alternative to MongoDB Atlas, there is also [Compose](https://www.compose.io/).
 
 ### Grading
-* **80 Points** - REST API works as descibed in this README. All routes and search works as expected. All inputs are validated and correct errors are returned to client
-* **15 Points** - Frontend Test covers all routes and search functionality.
-* **5 Points** - Backend and Frontend code is well commented and easy to read/follow.
+* **85 Points** - Game plays correctly (with correct scores, win and loss states, etc)
+* **10 Points** - Game can continue and replay without reloading page
+* **5 Points** -  Code is well commented and easy to read/follow.
 
-* If code doesn't run/compile you can get no more than a 65. But please write comments and a README to explain what you were trying to do. 
+* If code doesn't run/compile you can get no more than a 65, although this score can be much lower. But please write comments and a README to explain what you were trying to do. 
 
 
