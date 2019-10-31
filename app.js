@@ -10,13 +10,13 @@ var indexRouter = require('./routes/index');
 
 
 //dotenv.config({ path: '.env.example' });
-dotenv.config({ path: '.env' });
+//dotenv.config({ path: '.env' });
 
 var app = express();
 
 /**
  * Connect to MongoDB.
- */
+ 
 mongoose.Promise = global.Promise;
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
@@ -25,6 +25,7 @@ mongoose.connection.on('error', (err) => {
   console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
   process.exit();
 });
+*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
