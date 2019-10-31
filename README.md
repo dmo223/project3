@@ -23,10 +23,16 @@ The game goes as followes:
 Number cards are worth the number listed on the card. Face cards (King, Queen, Jack) are worth 10 points. And Aces are worth 11 or 1 points (use the value that ensures you do not go over 21).
 
 ### Frontend layout
-Your page should have a green (card table green) background. At the top will be the 
+Your page should have a green (card table green) background. At the top center will be the dealers hand, on the bottom center will be the players hand. On the right side of the dealer and player's hand will be a number showing the current points for that hand (labeled as such). On the left side of the player's hand will be two buttons. One label Hit me, which will give a new card to the player and another labeled "Stay", which will finish the player's turn. Between the player and the dealer on the left will be the deck of card (faced down).
 
-### Frontend Testing
-You will also need to test all the routes listed above, using similar AJAX requests you used in Project 1. You must test all routes for both success and failure (return the correct error code). A basic index.pug page with some buttons have been created for you in this project. The code in /public/javascripts/main.js will fire when pressing these buttons. Feel free to add new buttons to create more events, or test other behaviour. Write comments in main.js to describe your tests and what expected output is. 
+### Game Flow
+The flow of the game (events that need to take place) are as follows:
+* The moment the main HTML page loads, a modal (screen overlay, see [here] (https://semantic-ui.com/modules/modal.html) as an example) appears asking if the player wishes to play. Under that there is a green button labeled "Deal" which will start the game.
+* Once the button is pressed, the modal goes away, and the player and dealer are delt two cards. The dealer is given cards first, with an animation showing the card moving face down towards the dealer's hand. The second card delt to the dealer is animated with a flip to reveal the card to the player. Then the player get's their cards, animated to move from the deck to the players hand. They are then both fliped face up to reveal the cards to the player. The score for the cards is displayed to the right of both the player and the dealer.
+* Player can now press the "Hit Me" button to get another card. This card will be animated to move from the deck to the player's hand. The score total will also update. If the score goes above 21, the dealer's hand is completely revealed, and the player loses (go to the game over modal as described later in this section. 
+* Once the player presses the "stay" button. The dealer starts their turn. The dealer's hand is completely revealed (and the score by the dealer's hand is now updated). The dealer will continue to add cards until they have at least a score of 17. If the dealer goes over 21, the game is over and the player wins. (Go to the game over screen).
+* If both the player and dealer do not go over 21, then who ever has the highest number wins. If they have the same score, it is a tie. (Go to the game over modal)
+* The game over modal will display who won, and a button asking if the player wishes to play again. If this button is pressed. The cards, score, etc are cleared, the modal goes away. And the player can play the game again. 
 
 ### Install and Run
 You must have node.js running on your machine. Once you have cloned this project you can run `npm install` to install all the packages for this project. Then running `npm run dev` will run the dev version of this code, which will run this project with nodemon. Nodemon auto-restarts the node server every time you make a change to a file. Very helpful when you are writing and testing code.
