@@ -1,5 +1,5 @@
 # CSE264 Project 3: Making a Blackjack 21 Game using HTML/CSS/DOM
-## Due: Thursday, November 14, 2019 at 11:59 PM
+## Due: Tuesday, Dec 1, 2020 at 11:59 PM
 
 In this assignment, you will use HTML, CSS, and JavaScript on the Frontend to create a playable blackjack 21 game.
 
