@@ -1,8 +1,156 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html{
+  background-color: #076324;
+  font-family: "FranklinITCProLight","HelveticaNeue","Helvetica Neue Light","Helvetica Neue", "Helvetica" , "Arial","Lucida Grande","sans-serif";
+  }
+
+.gridContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: grid;
+  grid-template: '. dealer dealer dealerScore' 'deck . . .' 'play player player playerScore';
 }
 
-a {
-  color: #00B7FF;
+
+
+h1{
+  -webkit-text-stroke: 0.7px black;
+  color: #D4AF37;
+  text-align: center;}
+
+
+#hit{
+  background-color: yellow;
+  border: 0.25px solid #ffffff;
+  height: 20px;
+  width: 40px;
 }
+
+#stay{
+  background-color: red;
+  border: 0.25px solid #ffffff;
+  height: 20px;
+  width: 40px;
+}
+
+#buttons{
+  grid-area: play;
+  margin-top: 25%;
+  margin-left: 25%;
+  position: relative;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modalContent {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 15px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  transition: opacity ease-in-out 0.2s;
+  border-radius: 4px;
+  text-align: center;
+}
+
+
+button{
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+  margin: 4px 2px;
+  border-radius: 4px;
+}
+
+#deal{
+  background-color:#32CD32;
+  padding: 10px 15px;
+  color: white;
+  font-size: 15px;
+}
+
+#reset{
+  background-color: black;
+  color: white;
+  padding: 8px 12px;
+  font-size: 15px;
+}
+
+#dealerHand{
+  grid-area: dealer;
+  padding-top: 15px;
+  position: relative;
+}
+
+#playerHand{
+  grid-area: player;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+#deck{
+  grid-area: deck;
+  margin-left: 20px;
+  position: relative;
+}
+
+#deckImage{
+  height: 100px;
+  width: 80px;
+  box-shadow: 5px 5px 2.5px rgb(153, 153, 153);
+  border-radius: 4px;
+}
+
+#score1{
+  grid-area: dealerScore;
+  padding-top: 15px;
+}
+
+#score2{
+  grid-area: playerScore;
+  
+}
+
+.cards{
+  height:100px;
+  width: 80px;
+  float: left;
+  position: relative;
+  margin-right: -60px;
+}
+
+.scores{
+  border-radius: 50%;
+  position: relative;
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  font-weight: bold; 
+  font-size: 18pt;
+  padding: 10px;
+
+}
+
+#score1 p, #score2 p{
+  color: lightgreen;
+  font-size: 16pt;
+  font-weight: bold;
+}
+

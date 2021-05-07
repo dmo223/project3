@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body>
+    <div id="myModal" class="modal">
+      <div class="modalContent">
+        <h1>Blackjack</h1> 
+        <p>Score 21 or beat the dealer's hand. Ready?</p>
+        <button id="deal">Deal</button>
+      </div>
+    </div>
+
+    <div class="gridContainer">
+    
+     <div id="dealerHand">
+        <img id="dealer1" class="cards">
+        <img id="dealer2" class="cards">
+      </div>
+
+      <div id="playerHand">
+        <img id="player1" class="cards">
+        <img id="player2" class="cards">
+      </div>
+      
+      <div id="deck">
+        <img src = "https://i.pinimg.com/originals/0a/c9/80/0ac980faf82b5e7c51ad33539d98d218.jpg" id="deckImage">
+      </div>
+      
+      <div id="buttons">
+        <button id="hit">Hit</button>
+        <button id="stay">Stay</button>
+      </div>
+
+      <div id="score1">
+        <button id="dealerScore" class="scores">0</button>
+        <p>Dealer</p>
+      </div>
+
+      <div id="score2">
+        <button id="playerScore" class="scores">0</button>
+        <p>Player</p>
+      </div>
+  
+    </div>
+    
+    <div id="myModal2" class="modal">
+      <div class="modalContent">
+        <p id="end">Game Over.</p>
+        <button id="reset">Play Again</button>
+      </div>
+    </div> 
+
+    <script src="script.js"></script>
+    
+  </body>
+</html>
