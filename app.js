@@ -14,8 +14,8 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
-/**
- * Connect to MongoDB.
+/*
+/// Connect to MongoDB.
  
 mongoose.Promise = global.Promise;
 
