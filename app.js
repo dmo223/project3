@@ -8,7 +8,6 @@ const dotenv = require('dotenv');
 
 var indexRouter = require('./routes/index');
 
-
 //dotenv.config({ path: '.env.example' });
 //dotenv.config({ path: '.env' });
 
@@ -29,7 +28,8 @@ mongoose.connection.on('error', (err) => {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 app.use(logger('dev'));
 app.use(express.json());
